@@ -3,7 +3,10 @@ var altura = document.getElementById("altura");
 var peso = document.getElementById("peso");
 var radios = document.getElementsByName("sexo");   
 var resultado = document.querySelector('#txtIMC');
-var resultIdeal = document.querySelector('#txtIdeal')
+var resultIdeal = document.querySelector('#txtIdeal');
+var buttonElement = document.querySelector('#IMC');
+
+
 
 function calcular(){
    
@@ -24,8 +27,6 @@ function calcular(){
     var IMC = peso.value / (Math.pow(altura,2)) ;
     IMC = ((Math.round(IMC*100))/100);
 
-    txtIMC = IMC;
-  
             if(idade.value >= 20 && idade.value <= 65){
                 if (IMC < 16.0){
                     resultado.innerHTML = ('Muito abaixo do peso grave'); 
@@ -82,10 +83,9 @@ function calcular(){
                     }
         }    
 }
-
-
-
 }
+
+buttonElement.onclick = calcular;
 
 
 
